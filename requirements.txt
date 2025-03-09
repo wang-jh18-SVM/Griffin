@@ -1,0 +1,7 @@
+motmetrics==1.1.3
+einops==0.4.1
+yapf==0.40.1
+setuptools==59.5.0
+pillow==9.0.0
+tensorboard==2.12.0
+wandb
