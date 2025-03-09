@@ -1,4 +1,4 @@
-# Griffin: The First Open-Source Aerial-Ground Cooperative 3D Perception Dataset and Benchmark
+# Griffin: Aerial-Ground Cooperative Detection and Tracking Dataset and Benchmark
 
 ![data_example](docs/figure/data_example.png)
 
@@ -11,7 +11,7 @@
 ## News
 
 - 🚀 **(2025/3)** Released source code and pre-trained models for the **AGILE framework**—the first Aerial-Ground Instance-LEvel intermediate fusion framework.
-- 📦 **(2025/3)** Griffin V1.0 dataset is now available on [Baidu Netdisk](https://pan.baidu.com/s/1NDgsuHB-QPRiROV73NRU5g?pwd=u3cm).
+- 📦 **(2025/3)** Griffin V1.0 dataset is now available at [Baidu Netdisk](https://pan.baidu.com/s/1NDgsuHB-QPRiROV73NRU5g?pwd=u3cm).
 
 ---
 
