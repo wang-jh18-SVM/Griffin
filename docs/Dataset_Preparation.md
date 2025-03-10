@@ -11,15 +11,15 @@ Each of the 205 scenes lasts ~15 seconds (~150 frames), totaling over 30,000 sam
 - Get Griffin from [Baidu Netdisk](https://pan.baidu.com/s/1NDgsuHB-QPRiROV73NRU5g?pwd=u3cm) and organize as follows:
   ```
   └── datasets
-      ├── griffin_50scenes_25m (md5: 391e6ba2ddc97615d092cd9cb04d21e0)
+      ├── griffin_50scenes_25m (md5: 58df4ceaa051d9066c2de09738d5f575)
       │   └── griffin-release
       │       ├── vehicle-side
       │       └── drone-side
-      ├── griffin_50scenes_40m (md5: adba8dc3ee2e1f5635b60f48559252a2)
+      ├── griffin_50scenes_40m (md5: 63c7b74f03c5a62cd394c8d806f2a539)
       │   └── griffin-release
       │       ├── vehicle-side
       │       └── drone-side
-      └── griffin_100scenes_random (md5: 96c9bf0a3ade9490b390d53dcff06e26)
+      └── griffin_100scenes_random (md5: 88457617e27e01c13d4fb5753e0cfa36)
           └── griffin-release
               ├── vehicle-side
               └── drone-side
