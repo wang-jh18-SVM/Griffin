@@ -1,5 +1,12 @@
 # Griffin: Aerial-Ground Cooperative Detection and Tracking Dataset and Benchmark
 
+<h3 align="center">
+    <a href="https://arxiv.org/abs/2503.06983">📄 arXiv</a> |
+    <a href="https://github.com/wang-jh18-SVM/Griffin">🐙 GitHub</a> |
+    <a href="https://pan.baidu.com/s/1NDgsuHB-QPRiROV73NRU5g?pwd=u3cm">💾 Baidu Netdisk</a> |
+    <a href="https://huggingface.co/datasets/wjh-svm/Griffin">🤗 Hugging Face</a>
+</h3>
+
 ![data_example](docs/figure/data_example.png)
 
 **Griffin** is the pioneering publicly available dataset for aerial-ground cooperative 3D perception. Built using CARLA-AirSim co-simulation, it features over 200 dynamic scenes—totaling more than 30,000 frames and 270,000 images. With instance-aware occlusion quantification, variable UAV altitudes (20–60 meters), and realistic drone dynamics under diverse conditions, Griffin sets a new standard for cooperative perception research.
@@ -11,7 +18,8 @@
 ## News
 
 - 🚀 **(2025/3)** Released source code and pre-trained models for the **AGILE framework**—the first Aerial-Ground Instance-LEvel intermediate fusion framework.
-- 📦 **(2025/3)** Griffin V1.0 dataset is now available at [Baidu Netdisk](https://pan.baidu.com/s/1NDgsuHB-QPRiROV73NRU5g?pwd=u3cm).
+- 📦 **(2025/3)** Griffin V1.0 dataset is now available at [Baidu Netdisk](https://pan.baidu.com/s/1NDgsuHB-QPRiROV73NRU5g?pwd=u3cm) and [Hugging Face](https://huggingface.co/datasets/wjh-svm/Griffin).
+- 📝 **(2025/3)** Our paper is now available on [ArXiv](https://arxiv.org/abs/2503.06983).
 
 ---
 
@@ -69,10 +77,18 @@ Detailed results with all metrics are lised in [docs/detailed_results.csv](docs/
 
 ## Citation
 
-If you find Griffin useful, please consider giving a ⭐ and citing our work (details coming soon):
-    ```
-    TBD
-    ```
+If you find Griffin useful, please consider giving a ⭐ and citing our work:
+```bibtex
+@misc{wang2025griffinaerialgroundcooperativedetection,
+      title={Griffin: Aerial-Ground Cooperative Detection and Tracking Dataset and Benchmark}, 
+      author={Jiahao Wang and Xiangyu Cao and Jiaru Zhong and Yuner Zhang and Haibao Yu and Lei He and Shaobing Xu},
+      year={2025},
+      eprint={2503.06983},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2503.06983}, 
+}
+```
 
 ---
 
@@ -80,6 +96,6 @@ If you find Griffin useful, please consider giving a ⭐ and citing our work (de
 
 We're grateful to these amazing open-source projects:
 - [mmdet3d](https://github.com/open-mmlab/mmdetection3d): Core 3D detection framework.
-- [UniV2X](https://github.com/AIR-THU/UniV2X): Cooperative perception inspiration (by our team).
-- [BEVFormer](https://github.com/fundamentalvision/BEVFormer): 3D Object Detection Baseline.
-- [AB3DMOT](https://github.com/xinshuoweng/AB3DMOT): 3D Multi-Object Tracking Baseline.
+- [UniV2X](https://github.com/AIR-THU/UniV2X): Cooperative perception inspiration (ours).
+- [BEVFormer](https://github.com/fundamentalvision/BEVFormer): 3D object detection baseline.
+- [AB3DMOT](https://github.com/xinshuoweng/AB3DMOT): 3D multi-object tracking baseline.

@@ -7,32 +7,33 @@ Training the cooperative model requires a three-step process using checkpoints f
 ### 1. Vehicle-Side Model
 - Train the vehicle-side model:
   ```bash
-  CUDA_VISIBLE_DEVICES=GPU_ID ./tools/dist_train.sh configs/CONFIG_FILE_VEHICLE NUM_GPUS
+  CUDA_VISIBLE_DEVICES=GPU_ID ./tools/dist_train.sh CONFIG_FILE_VEHICLE NUM_GPUS
+  # CUDA_VISIBLE_DEVICES=0,1,2,3 ./tools/dist_train.sh projects/configs_griffin_50scenes_25m/vehicle-side/tiny_track_r50_stream_bs8_48epoch_3cls.py 4
   ```
 
 ### 2. Drone-Side Model
 - Train the drone-side model:
   ```bash
   CUDA_VISIBLE_DEVICES=GPU_ID ./tools/dist_train.sh CONFIG_FILE_DRONE NUM_GPUS
-  ```
-- Modify the parameters in CONFIG_FILE_DRONE:
-  ```python
-  save_track_query=True
+  # CUDA_VISIBLE_DEVICES=0,1,2,3 ./tools/dist_train.sh projects/configs_griffin_50scenes_25m/drone-side/tiny_track_r50_stream_bs8_48epoch_3cls.py 4
   ```
 - Run inference to save track queries:
   ```bash
-  CUDA_VISIBLE_DEVICES=GPU_ID ./tools/dist_eval.sh CONFIG_FILE_DRONE CHECKPOINT NUM_GPUS
+  CUDA_VISIBLE_DEVICES=GPU_ID ./tools/dist_eval.sh CONFIG_FILE_DRONE CHECKPOINT_DRONE NUM_GPUS
+  # CUDA_VISIBLE_DEVICES=0 ./tools/dist_eval.sh projects/configs_griffin_50scenes_25m/drone-side/tiny_track_r50_stream_bs8_24epoch_3cls_eval_train.py projects/work_dirs_griffin_50scenes_25m/drone-side/tiny_track_r50_stream_bs8_48epoch_3cls/latest.pth 1
+  # CUDA_VISIBLE_DEVICES=0 ./tools/dist_eval.sh projects/configs_griffin_50scenes_25m/drone-side/tiny_track_r50_stream_bs8_24epoch_3cls_eval.py projects/work_dirs_griffin_50scenes_25m/drone-side/tiny_track_r50_stream_bs8_48epoch_3cls/latest.pth 1
   ```
 
 ### 3. Cooperative Model
 - Train using saved drone-side track queries:
   ```bash
   CUDA_VISIBLE_DEVICES=GPU_ID ./tools/dist_train.sh CONFIG_FILE_COOP NUM_GPUS
+  # CUDA_VISIBLE_DEVICES=0,1,2,3 ./tools/dist_train.sh projects/configs_griffin_50scenes_25m/cooperative/tiny_track_r50_stream_bs8_48epoch_3cls.py 4
   ```
 
 ## Evaluation
 
-Evaluate models using the provided checkpoints from [Baidu Netdisk](https://pan.baidu.com/s/1NDgsuHB-QPRiROV73NRU5g?pwd=u3cm):
+Evaluate models using the provided checkpoints from [Baidu Netdisk](https://pan.baidu.com/s/1NDgsuHB-QPRiROV73NRU5g?pwd=u3cm) or [Hugging Face](https://huggingface.co/datasets/wjh-svm/Griffin):
 ```
 └── ckpts
     ├── griffin_50scenes_25m

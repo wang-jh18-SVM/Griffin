@@ -8,21 +8,45 @@ Griffin is split into three subsets based on UAV cruising altitude:
 Each of the 205 scenes lasts ~15 seconds (~150 frames), totaling over 30,000 samples and 275,000 images. The dataset supports both KITTI (ego-centric) and NuScenes (global reference) formats.
 
 ## Download Dataset
-- Get Griffin from [Baidu Netdisk](https://pan.baidu.com/s/1NDgsuHB-QPRiROV73NRU5g?pwd=u3cm) and organize as follows:
+- Get Griffin from [Baidu Netdisk](https://pan.baidu.com/s/1NDgsuHB-QPRiROV73NRU5g?pwd=u3cm) or [Hugging Face](https://huggingface.co/datasets/wjh-svm/Griffin) and organize as follows: (showing griffin_50scenes_25m as an example, other datasets have similar structures)
   ```
   └── datasets
-      ├── griffin_50scenes_25m (md5: 58df4ceaa051d9066c2de09738d5f575)
+      ├── griffin_50scenes_25m
       │   └── griffin-release
       │       ├── vehicle-side
+      │       │   ├── calib
+      │       │   ├── camera
+      │       │   │   ├── back
+      │       │   │   ├── front
+      │       │   │   ├── instance_back
+      │       │   │   ├── instance_front
+      │       │   │   ├── instance_left
+      │       │   │   ├── instance_right
+      │       │   │   ├── left
+      │       │   │   └── right
+      │       │   ├── label
+      │       │   ├── lidar
+      │       │   │   └── lidar_top
+      │       │   ├── pose
+      │       │   └── scene_infos.json
       │       └── drone-side
-      ├── griffin_50scenes_40m (md5: 63c7b74f03c5a62cd394c8d806f2a539)
-      │   └── griffin-release
-      │       ├── vehicle-side
-      │       └── drone-side
-      └── griffin_100scenes_random (md5: 88457617e27e01c13d4fb5753e0cfa36)
-          └── griffin-release
-              ├── vehicle-side
-              └── drone-side
+      │           ├── calib
+      │           ├── camera
+      │           │   ├── back
+      │           │   ├── bottom
+      │           │   ├── front
+      │           │   ├── instance_back
+      │           │   ├── instance_bottom
+      │           │   ├── instance_front
+      │           │   ├── instance_left
+      │           │   ├── instance_right
+      │           │   ├── left
+      │           │   └── right
+      │           ├── label
+      │           ├── pose
+      │           └── scene_infos.json
+      ├── griffin_50scenes_40m
+      └── griffin_100scenes_random
   ```
 
 ## Convert to NuScenes Format
@@ -38,8 +62,6 @@ Each of the 205 scenes lasts ~15 seconds (~150 frames), totaling over 30,000 sam
   │   ├── infos
   │   │   └── griffin_50scenes_25m
   │   │       ├── cooperative
-  │   │       │   ├── griffin_infos_train.pkl
-  │   │       │   └── griffin_infos_val.pkl
   │   │       ├── drone-side
   │   │       └── vehicle-side
   │   └── split_datas
