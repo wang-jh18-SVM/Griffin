@@ -387,10 +387,9 @@ class GriffinDataset(NuScenesDataset):
             mask = info['valid_flag']
         else:
             mask = info['num_lidar_pts'] > 0
-        gt_bboxes_3d = info['gt_boxes'][mask]  # cx, cy, cz, w, l, h, yaw
-
-        # Debug yaw
-        gt_bboxes_3d[:, -1] = -gt_bboxes_3d[:, -1] + np.pi
+        gt_bboxes_3d = info['gt_boxes'][
+            mask
+        ]  # cx, cy, cz, w, l, h, yaw(0: negative y, pi/2: negative x)
 
         gt_names_3d = info['gt_names'][mask]
         gt_inds = info['gt_inds'][mask]

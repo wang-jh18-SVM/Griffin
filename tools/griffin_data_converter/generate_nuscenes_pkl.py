@@ -230,23 +230,18 @@ def _fill_trainval_infos(
             # boxes = nusc.get_boxes(lidar_token)
             _, boxes, _ = nusc.get_sample_data(lidar_token)  # lidar coordinate
 
-            # UniAD Box
             locs = np.array([b.center for b in boxes]).reshape(-1, 3)
             dims = np.array([b.wlh for b in boxes]).reshape(-1, 3)
             rots = np.array([b.orientation.yaw_pitch_roll[0] for b in boxes]).reshape(
                 -1, 1
             )
-            gt_boxes = np.concatenate(
-                [locs, dims, -rots - np.pi / 2], axis=1
-            )  # cx, cy, cz, w, l, h, yaw
 
-            # # Sparse 4D Box
-            # locs = np.array([b.center for b in boxes]).reshape(-1, 3)
-            # dims = np.array([b.wlh for b in boxes]).reshape(-1, 3)
-            # rots = np.array([b.orientation.yaw_pitch_roll[0] for b in boxes]).reshape(
-            #     -1, 1
-            # )
-            # # convert box size to the format of our lidar coordinate system, which is x_size, y_size, z_size (corresponding to l, w, h)
+            # for mmdetection3d v0.17.1, details in mmdet3d/core/bbox/structures/lidar_box3d.py
+            # cx, cy, cz, w, l, h, yaw(0: negative y, pi/2: negative x)
+            gt_boxes = np.concatenate([locs, dims, -rots - np.pi / 2], axis=1)
+
+            # for mmdetection3d v1.0+
+            # cx, cy, cz, l, w, h, yaw(0: x, pi/2: y)
             # gt_boxes = np.concatenate([locs, dims[:, [1, 0, 2]], rots], axis=1)
 
             assert len(gt_boxes) == len(
